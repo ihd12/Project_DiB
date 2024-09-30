@@ -36,7 +36,7 @@ public class MemberController {
 
     @GetMapping("/join")
     public String join() {
-        return "/member/join";
+        return "member/join";
     }
 
     @GetMapping("/login")
@@ -76,5 +76,4 @@ public class MemberController {
         memberService.delete(mid);
         return "redirect:/logout";
     }
-
 }

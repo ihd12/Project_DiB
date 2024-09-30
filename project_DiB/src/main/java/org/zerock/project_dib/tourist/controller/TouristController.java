@@ -48,7 +48,7 @@ public class TouristController {
 
         model.addAttribute("list", list);
 
-        return "/tourist/list";
+        return "tourist/list";
     }
 
     @GetMapping("/read/{tno}")
@@ -57,7 +57,7 @@ public class TouristController {
         TouristDTO dto = touristService.read(tno);
         dto.setFileNames(fileNames);
         model.addAttribute("dto", dto);
-        return "/tourist/read";
+        return "tourist/read";
     }
 
     @PreAuthorize("hasRole('ROLE_ADMIN')")
@@ -89,7 +89,7 @@ public class TouristController {
         touristDTO.setTno(tno);
         TouristDTO dto = touristService.read(tno);
         model.addAttribute("dto", dto);
-        return "/tourist/modify";
+        return "tourist/modify";
 
     }
 
